@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { portfolioData } from '../constants';
 import Section from './Section';
@@ -42,7 +43,7 @@ const Skills: React.FC = () => {
             className="group"
           >
             <div className="flex flex-col items-center justify-center gap-3 p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 transition-all duration-300 group-hover:shadow-lg group-hover:border-slate-300 dark:group-hover:border-neutral-700 group-hover:-translate-y-1">
-              <div className="w-12 h-12 p-1.5 rounded-lg bg-slate-100 dark:bg-neutral-900 flex items-center justify-center">
+              <div className="w-12 h-12 p-1.5 rounded-lg bg-slate-100 dark:bg-neutral-900 flex items-center justify-center transition-colors duration-300 group-hover:bg-slate-200/60 dark:group-hover:bg-neutral-800/60">
                   {React.cloneElement(skill.icon, { className: "w-full h-full object-contain" })}
               </div>
               <p className="text-sm font-medium text-slate-700 dark:text-neutral-300">{skill.name}</p>
