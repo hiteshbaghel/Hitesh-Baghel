@@ -2,16 +2,26 @@ import React from 'react';
 import { portfolioData, GithubIcon, ExternalLinkIcon } from '../constants';
 import Section from './Section';
 import { Card, CardContent, CardTitle, CardDescription, CardDecoration, Badge } from './ui/Card';
+import { motion } from 'framer-motion';
+
+const MotionCard = motion(Card);
 
 const Projects: React.FC = () => {
   return (
     <Section id="projects" title="Projects">
       <div className="space-y-12 max-w-5xl mx-auto">
         {portfolioData.projects.map((project, index) => (
-          <Card 
+          <MotionCard
             key={index} 
-            className="transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:-translate-y-1 animate-on-scroll"
-            style={{ transitionDelay: `${index * 100}ms` }}
+            className="transition-transform duration-300 ease-in-out hover:scale-[1.02] hover:-translate-y-1"
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{
+              duration: 0.6,
+              ease: [0.16, 1, 0.3, 1],
+              delay: index * 0.1
+            }}
           >
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
@@ -46,7 +56,7 @@ const Projects: React.FC = () => {
               </div>
             </CardContent>
             <CardDecoration />
-          </Card>
+          </MotionCard>
         ))}
       </div>
     </Section>

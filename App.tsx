@@ -77,7 +77,7 @@ const App: React.FC = () => {
         <Experience />
         <Achievements />
         <Certifications />
-        <Contact />
+        <Contact theme={theme} />
       </main>
     </div>
   );
