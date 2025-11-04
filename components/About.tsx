@@ -1,9 +1,36 @@
+
 import React from 'react';
 import { portfolioData } from '../constants';
 import Section from './Section';
-import { motion } from 'framer-motion';
+// Fix: Import `Variants` to correctly type Framer Motion animation variants.
+import { motion, Variants } from 'framer-motion';
 
 const About: React.FC = () => {
+  const summaryWords = portfolioData.about.summary.split(' ');
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.02,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const wordVariants: Variants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+  };
+
   return (
     <Section id="about" title="About Me">
       <motion.div
@@ -17,9 +44,23 @@ const About: React.FC = () => {
            {/* Animated shimmer effect */}
           <div className="absolute inset-[-3px] rounded-[1.35rem] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)] opacity-40 dark:opacity-60 animate-pulse-slow" />
           <div className="relative p-8 md:p-10 rounded-[1.25rem] bg-slate-50/90 dark:bg-neutral-950/90">
-            <p className="text-lg text-slate-600 dark:text-neutral-400 leading-relaxed text-center">
-              {portfolioData.about.summary}
-            </p>
+            <motion.p 
+              className="text-lg text-slate-600 dark:text-neutral-400 leading-relaxed text-center"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {summaryWords.map((word, index) => (
+                <motion.span
+                  key={index}
+                  variants={wordVariants}
+                  className="inline-block"
+                >
+                  {word}&nbsp;
+                </motion.span>
+              ))}
+            </motion.p>
           </div>
         </div>
       </motion.div>

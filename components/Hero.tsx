@@ -2,20 +2,15 @@
 import React from 'react';
 import { portfolioData, GithubIcon, DownloadIcon } from '../constants';
 import { motion } from 'framer-motion';
-import Particles from './ui/Particles';
+import AnimatedGradientBackground from './ui/AnimatedGradientBackground';
 
 const Hero: React.FC = () => {
     return (
         <section id="hero" className="relative flex flex-col items-center justify-center min-h-[calc(100vh-80px)] text-center py-20 md:py-32 overflow-hidden">
             
-            {/* Animated Particle Background */}
-            <Particles />
+            {/* New Animated Gradient Background */}
+            <AnimatedGradientBackground />
             
-            {/* Abstract background shape */}
-            <div className="absolute inset-0 flex items-center justify-center -z-10" aria-hidden="true">
-                <div className="absolute w-[300px] h-[500px] sm:w-[400px] sm:h-[600px] md:w-[500px] md:h-[700px] border-[3px] border-indigo-500/10 dark:border-indigo-400/20 rounded-[45%] rotate-[30deg] animate-pulse-slow"></div>
-            </div>
-
             <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
