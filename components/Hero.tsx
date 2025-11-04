@@ -1,54 +1,57 @@
+
 import React from 'react';
-import { portfolioData, MailIcon, GithubIcon, LinkedinIcon } from '../constants';
-import { TypewriterEffect } from './ui/TypewriterEffect';
+import { portfolioData, GithubIcon } from '../constants';
+import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
-  const words = portfolioData.title.split(' ').map(text => ({ 
-      text, 
-      className: "text-slate-900 dark:text-neutral-100" 
-  }));
-
-  return (
-    <section id="hero" className="min-h-screen flex items-center -mt-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full max-w-6xl mx-auto">
-          {/* Content column */}
-          <div className="space-y-5 text-center lg:text-left">
-            <TypewriterEffect 
-              words={words} 
-              className="!text-center lg:!text-left text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
-              cursorClassName="bg-slate-900 dark:bg-neutral-100"
-            />
-            <p className="text-lg text-slate-600 dark:text-neutral-400 font-light fade-in-up-2 max-w-2xl mx-auto lg:mx-0">
-              A Backend Engineer skilled in building scalable and efficient applications using Java, Spring Boot, and MySQL. Passionate about API development, database management, and system integration.
-            </p>
-            <div className="flex items-center justify-center lg:justify-start gap-3 pt-2 fade-in-up-3">
-              <a href={`mailto:${portfolioData.contact.email}`} className="inline-flex items-center gap-2 bg-slate-900 text-white dark:bg-white dark:text-black font-semibold px-4 py-2 rounded-lg hover:bg-slate-700 dark:hover:bg-neutral-200 transition-colors">
-                <MailIcon className="w-5 h-5" />
-                Hire me
-              </a>
-              <a href={portfolioData.contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="w-10 h-10 inline-flex items-center justify-center bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white rounded-full transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                <GithubIcon className="w-5 h-5" />
-              </a>
-              <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 inline-flex items-center justify-center bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white rounded-full transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                <LinkedinIcon className="w-5 h-5" />
-              </a>
+    return (
+        <section id="hero" className="relative flex flex-col items-center justify-center min-h-[calc(100vh-80px)] text-center py-20 md:py-32 overflow-hidden">
+            
+            {/* Abstract background shape */}
+            <div className="absolute inset-0 flex items-center justify-center -z-10" aria-hidden="true">
+                <div className="absolute w-[300px] h-[500px] sm:w-[400px] sm:h-[600px] md:w-[500px] md:h-[700px] border-[3px] border-indigo-500/10 dark:border-indigo-400/20 rounded-[45%] rotate-[30deg] animate-pulse-slow"></div>
             </div>
-          </div>
 
-          {/* Image column (desktop only) */}
-          <div className="hidden lg:flex justify-center items-center">
-             <div className="relative w-80 h-80">
-                <div className="absolute inset-0.5 rounded-full bg-gradient-to-br from-indigo-300 via-sky-300 to-rose-300 dark:from-indigo-900/70 dark:via-sky-900/70 dark:to-rose-900/70 blur-2xl animate-pulse-slow"></div>
-                <img 
-                    src={portfolioData.profileImage} 
-                    alt={portfolioData.name}
-                    className="relative w-full h-full object-cover rounded-full border-4 border-slate-100 dark:border-neutral-900 shadow-2xl"
-                />
-            </div>
-          </div>
-      </div>
-    </section>
-  );
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="max-w-4xl z-10"
+            >
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-neutral-100">
+                    Hi, I'm <span className="text-indigo-600 dark:text-indigo-400">{portfolioData.name}</span>
+                </h1>
+                <p className="mt-4 text-lg md:text-xl text-slate-600 dark:text-neutral-400">
+                    A Passionate {portfolioData.title}
+                </p>
+
+                <h2 className="mt-8 text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 dark:text-neutral-200">
+                    I build elegant and efficient web applications.
+                </h2>
+                
+                <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-slate-600 dark:text-neutral-400 leading-relaxed">
+                    {portfolioData.description}
+                </p>
+
+                <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a 
+                        href="#contact" 
+                        className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-full hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 transform hover:scale-105"
+                    >
+                        Get In Touch
+                    </a>
+                    <a 
+                        href={portfolioData.contact.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 text-base font-medium text-slate-800 dark:text-neutral-200 bg-slate-100 dark:bg-neutral-800/50 border border-slate-200 dark:border-neutral-700 rounded-full hover:bg-slate-200 dark:hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105"
+                    >
+                       <GithubIcon className="w-5 h-5 mr-2" /> GitHub
+                    </a>
+                </div>
+            </motion.div>
+        </section>
+    );
 };
 
 export default Hero;

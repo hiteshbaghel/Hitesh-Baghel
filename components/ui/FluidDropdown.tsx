@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon } from '../../constants';
@@ -6,9 +7,8 @@ export interface Category {
   id: string;
   label: string;
   href: string;
-  // Fix: Specify that the icon is a React element that can accept a className prop.
-  // This resolves a TypeScript error where React.cloneElement couldn't infer the props type.
   icon: React.ReactElement<{ className?: string }>;
+  color?: string;
 }
 
 interface FluidDropdownProps {
@@ -56,21 +56,28 @@ export const FluidDropdown: React.FC<FluidDropdownProps> = ({
   }, []);
 
   return (
-    <div ref={dropdownRef} className={cn("relative", className)}>
+    <div ref={dropdownRef} className={cn("relative w-36", className)}>
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full px-3 py-2 text-sm font-medium border border-slate-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 rounded-lg text-slate-800 dark:text-neutral-200 hover:bg-slate-50 dark:hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 transition-colors"
+        className="relative flex items-center justify-between w-full px-3 py-2 text-sm font-medium rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 transition-colors overflow-hidden"
         whileTap={{ scale: 0.95 }}
       >
-        <div className="flex items-center gap-2">
+        <motion.div
+            className="absolute inset-0"
+            animate={{ backgroundColor: selectedCategory.color || '#6366f1' }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+        />
+
+        <div className="relative z-10 flex items-center gap-2 text-white font-semibold">
           {React.cloneElement(selectedCategory.icon, { className: "w-4 h-4" })}
           <span>{selectedCategory.label}</span>
         </div>
         <motion.div
+            className="relative z-10 text-white"
             animate={{ rotate: isOpen ? -180 : 0 }}
             transition={{ duration: 0.2 }}
         >
-            <ChevronDownIcon className="w-5 h-5 opacity-60" />
+            <ChevronDownIcon className="w-5 h-5 opacity-80" />
         </motion.div>
       </motion.button>
       

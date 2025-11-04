@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { 
     portfolioData, SunIcon, MoonIcon, UserIcon, CodeIcon, FolderKanbanIcon, GraduationCapIcon, PhoneIcon
@@ -10,11 +11,11 @@ interface HeaderProps {
 }
 
 const navCategories: Category[] = [
-    { id: 'about', label: 'About', href: '#about', icon: <UserIcon className="w-4 h-4" /> },
-    { id: 'skills', label: 'Skills', href: '#skills', icon: <CodeIcon className="w-4 h-4" /> },
-    { id: 'projects', label: 'Projects', href: '#projects', icon: <FolderKanbanIcon className="w-4 h-4" /> },
-    { id: 'experience', label: 'Experience', href: '#experience', icon: <GraduationCapIcon className="w-4 h-4" /> },
-    { id: 'contact', label: 'Contact', href: '#contact', icon: <PhoneIcon className="w-4 h-4" /> },
+    { id: 'about', label: 'About', href: '#about', icon: <UserIcon />, color: "#0284c7" }, // sky-600
+    { id: 'skills', label: 'Skills', href: '#skills', icon: <CodeIcon />, color: "#059669" }, // emerald-600
+    { id: 'projects', label: 'Projects', href: '#projects', icon: <FolderKanbanIcon />, color: "#9333ea" }, // purple-600
+    { id: 'experience', label: 'Education', href: '#experience', icon: <GraduationCapIcon />, color: "#475569" }, // slate-600
+    { id: 'contact', label: 'Contact', href: '#contact', icon: <PhoneIcon />, color: "#4f46e5" }, // indigo-600
 ];
 
 const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
@@ -47,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
     { href: '#about', label: 'About' },
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
-    { href: '#experience', label: 'Experience' },
+    { href: '#experience', label: 'Education' },
   ];
 
   const handleLinkClick = (href: string) => {
@@ -79,10 +80,12 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
                 {theme === 'light' ? <MoonIcon className="w-4 h-4" /> : <SunIcon className="w-4 h-4" />}
             </button>
             <div className="md:hidden">
-                <FluidDropdown 
+                <FluidDropdown
                     categories={navCategories}
                     selectedId={activeSectionId}
-                    onSelect={(category) => handleLinkClick(category.href)}
+                    onSelect={(category) => {
+                        handleLinkClick(category.href);
+                    }}
                 />
             </div>
         </div>

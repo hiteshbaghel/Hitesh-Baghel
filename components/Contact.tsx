@@ -1,12 +1,8 @@
+
 import React from 'react';
-import { portfolioData, GithubIcon, LeetcodeIcon, MailIcon } from '../constants';
-import LinkedInBadge from './ui/LinkedInBadge';
+import { portfolioData, GithubIcon, LeetcodeIcon, MailIcon, LinkedinIcon } from '../constants';
 
-interface ContactProps {
-    theme: 'light' | 'dark';
-}
-
-const Contact: React.FC<ContactProps> = ({ theme }) => {
+const Contact: React.FC = () => {
   return (
     <section id="contact" className="relative py-20 md:py-24 overflow-hidden">
       {/* Background Glow */}
@@ -36,10 +32,6 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
 
                 {/* Right Column: Social Links */}
                 <div className="flex flex-col gap-4">
-                    {/* LinkedIn Badge for mobile view */}
-                    <div className="block lg:hidden mx-auto mb-4">
-                        <LinkedInBadge theme={theme} />
-                    </div>
                     <a href={portfolioData.contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" 
                        className="group flex items-center justify-between p-4 rounded-xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 hover:border-slate-300 dark:hover:border-neutral-700 hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition-all duration-300 hover:scale-[1.03]">
                         <div className="flex items-center gap-4">
@@ -50,6 +42,17 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-slate-400 dark:text-neutral-600 group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"></path></svg>
+                    </a>
+                     <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                       className="group flex items-center justify-between p-4 rounded-xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 hover:border-slate-300 dark:hover:border-neutral-700 hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition-all duration-300 hover:scale-[1.03]">
+                        <div className="flex items-center gap-4">
+                            <LinkedinIcon className="w-8 h-8 text-slate-600 dark:text-neutral-400" />
+                            <div>
+                                <h4 className="font-bold text-slate-800 dark:text-neutral-200">LinkedIn</h4>
+                                <p className="text-sm text-slate-500 dark:text-neutral-500">View my profile</p>
+                            </div>
+                        </div>
+                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-slate-400 dark:text-neutral-600 group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"></path></svg>
                     </a>
                     <a href={portfolioData.contact.leetcode} target="_blank" rel="noopener noreferrer" aria-label="LeetCode"
                        className="group flex items-center justify-between p-4 rounded-xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 hover:border-slate-300 dark:hover:border-neutral-700 hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition-all duration-300 hover:scale-[1.03]">
