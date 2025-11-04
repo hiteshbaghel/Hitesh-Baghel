@@ -1,11 +1,15 @@
 
 import React from 'react';
-import { portfolioData, GithubIcon } from '../constants';
+import { portfolioData, GithubIcon, DownloadIcon } from '../constants';
 import { motion } from 'framer-motion';
+import Particles from './ui/Particles';
 
 const Hero: React.FC = () => {
     return (
         <section id="hero" className="relative flex flex-col items-center justify-center min-h-[calc(100vh-80px)] text-center py-20 md:py-32 overflow-hidden">
+            
+            {/* Animated Particle Background */}
+            <Particles />
             
             {/* Abstract background shape */}
             <div className="absolute inset-0 flex items-center justify-center -z-10" aria-hidden="true">
@@ -35,10 +39,12 @@ const Hero: React.FC = () => {
 
                 <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a 
-                        href="#contact" 
-                        className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-full hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 transform hover:scale-105"
+                        href="https://drive.google.com/file/d/15BeQ-bJ-wMXAycyCtUx4_CNuVqZUfHt8/view?usp=drive_link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 text-base font-medium text-slate-800 dark:text-neutral-200 bg-slate-100 dark:bg-neutral-800/50 border border-slate-200 dark:border-neutral-700 rounded-full hover:bg-slate-200 dark:hover:bg-neutral-800 transition-all duration-300 transform hover:scale-105"
                     >
-                        Get In Touch
+                       <DownloadIcon className="w-5 h-5 mr-2" /> Resume
                     </a>
                     <a 
                         href={portfolioData.contact.github} 

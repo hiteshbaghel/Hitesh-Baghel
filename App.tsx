@@ -9,6 +9,8 @@ import Experience from './components/Experience';
 import Achievements from './components/Achievements';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
+// Fix: Import the Footer component to be used in the layout.
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState(() => {
@@ -69,7 +71,7 @@ const App: React.FC = () => {
 
   return (
     <div className="font-sans antialiased bg-slate-50 dark:bg-[#0A0A0A] text-slate-800 dark:text-neutral-300 transition-colors duration-300">
-      <Header theme={theme} toggleTheme={toggleTheme} />
+      <Header />
       <main className="container mx-auto px-4 sm:px-6 md:px-12">
         <Hero />
         <About />
@@ -80,6 +82,8 @@ const App: React.FC = () => {
         <Certifications />
         <Contact />
       </main>
+      {/* Fix: Add the Footer component to complete the page layout. */}
+      <Footer />
     </div>
   );
 };
