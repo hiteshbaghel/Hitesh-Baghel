@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Base64 encoded profile image
-const profileImageBase64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFhYZGRgaHBwaHBoaHBwaHBoaHBoaGhwaGhgcIS4lHB4rIRoaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHzQrJCs0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAAAQIDBAUGB//EAEkQAAIBAgQDBQQGBggEBwAAAAECAAMRBBIhMQVBUQYTImFxgZGhMrHB0RQjQlJy4fAVQ2KSk6KywvEzorMkc4OTo8PT4v/EABoBAAMBAQEBAAAAAAAAAAAAAAECAwQABQb/xAAwEQACAgEDAgMIAgMAAwAAAAAAAQIRAxIhBBMxQVEiMmFxFIGhscHR4fBCgZFC8VL/9gAIAQEAAT8A9wCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIg-bhBHZFVk-hBHZFVk-h... (truncated)";
+const profileImageBase64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFhYZGRgaHBwaHBoaHBwaHBoaHBoaGhwaGhgcIS4lHB4rIRoaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHzQrJCs0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAOEA4QMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAAAQIDBAUGB//EAEkQAAIBAgQDBQQGBggEBwAAAAECAAMRBBIhMQVBUQYTImFxgZGhMrHB0RQjQlJy4fAVQ2KSk6KywvEzorMkc4OTo8PT4v/EABoBAAMBAQEBAAAAAAAAAAAAAAECAwQABQb/xAAwEQACAgEDAgMIAgMAAwAAAAAAAQIRAxIhBBMxQVEiMmFxFIGhscHR4fBCgZFC8VL/9gAIAQEAAT8A9wCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIgCIg-bhBHZFVk-hBHZFVk-h... (truncated)";
 
 // --- Generic Icons ---
 export const SunIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -206,9 +206,9 @@ const Css3Icon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export const portfolioData = {
   name: 'Hitesh Baghel',
-  title: 'Hitesh Baghel is a Java Backend Developer',
+  title: 'Java Backend Developer',
   profileImage: profileImageBase64,
-  summary: "A passionate Java Backend Developer with a strong foundation in building scalable, high-performance web applications. I have hands-on experience with the Spring Framework, microservices architecture, and various database technologies. My goal is to create robust and efficient backend systems that provide seamless user experiences. I'm always eager to learn, adapt, and tackle new challenges in the ever-evolving world of technology.",
+  summary: "Backend Engineer skilled in building scalable and efficient applications using Java, Spring Boot, and MySQL. Hands-on experience in API development, database management, and system integration through academic and personal projects. Strong problem-solving abilities with solid understanding of DSA, OOP, and software engineering principles. Enthusiastic about applying technical expertise to impactful projects while continuously learning.",
   skills: [
     { name: 'Java', icon: <JavaIcon /> },
     { name: 'Spring Boot', icon: <SpringBootIcon /> },
@@ -217,62 +217,60 @@ export const portfolioData = {
     { name: 'JavaScript', icon: <JsIcon /> },
     { name: 'Git', icon: <GitIcon /> },
     { name: 'Docker', icon: <DockerIcon /> },
-    { name: 'Tailwind CSS', icon: <TailwindIcon /> },
     { name: 'HTML5', icon: <Html5Icon /> },
     { name: 'CSS3', icon: <Css3Icon /> },
   ],
   projects: [
     {
-      title: 'Real-Time Stock Portfolio Tracker',
-      description: 'A dynamic web application that allows users to track their stock portfolios in real-time. The system fetches live stock data from a third-party API, calculates portfolio value, and displays historical performance charts. The backend is built with Spring Boot and WebSocket for real-time updates.',
-      tags: ['Full-Stack', 'Finance', 'Real-Time'],
-      stack: ['Java', 'Spring Boot', 'WebSocket', 'MySQL', 'React', 'JavaScript'],
+      title: 'SkillSyncAI – AI Powered Placement Preparation Platform',
+      description: 'Designed and implemented a full-stack platform with AI-driven mock interviews, quiz generation, ML-based placement prediction, leaderboard & analytics. Enhanced placement readiness for students.',
+      tags: ['AI/ML', 'Full-Stack', 'Ed-Tech'],
+      stack: ['React', 'Java', 'Spring Boot', 'MySQL'],
       links: {
-        github: 'https://github.com/hiteshbaghel/real-time-stock-portfolio',
+        github: '#',
         demo: '#',
       },
     },
     {
-      title: 'E-commerce Microservices Platform',
-      description: 'A comprehensive e-commerce platform built on a microservices architecture. Features include product catalog, user authentication, shopping cart, order management, and a payment gateway. Each service is independently deployable and communicates via a REST API and message queue.',
-      tags: ['Backend', 'E-commerce', 'Microservices'],
-      stack: ['Java', 'Spring Cloud', 'Docker', 'MySQL', 'RabbitMQ', 'API Gateway'],
+      title: 'ByteWise - A Toolkit for Engineering Success',
+      description: 'Engineered a comprehensive academic toolkit with semester resources, Razorpay payments, certified course showcase, and admin dashboard with CRUD operations and analytics.',
+      tags: ['Full-Stack', 'E-learning', 'Toolkit'],
+      stack: ['React', 'Java', 'Spring Boot', 'MySQL'],
       links: {
-        github: 'https://github.com/hiteshbaghel/ecommerce-microservices',
-        demo: '#',
-      },
-    },
-    {
-      title: 'URL Shortener Service',
-      description: 'A RESTful API service that generates short aliases for long URLs, similar to Bitly. It includes features like custom URL generation, click tracking, and link expiration. Built with a focus on performance and scalability to handle a high volume of requests.',
-      tags: ['Backend', 'API', 'Utility'],
-      stack: ['Java', 'Spring Boot', 'MySQL', 'REST API'],
-      links: {
-        github: 'https://github.com/hiteshbaghel/url-shortener',
+        github: '#',
         demo: '#',
       },
     },
   ],
   education: [
     {
-      degree: 'Bachelor of Technology in Computer Science & Engineering',
-      institution: 'Rajiv Gandhi Proudyogiki Vishwavidyalaya, Bhopal',
-      duration: '2022 - 2026',
+      degree: 'B.Tech in Computer Science Engineering',
+      institution: 'Mahakal Institute of Technology, Ujjain',
+      duration: 'Sep 2022 - Jun 2026',
+    },
+    {
+      degree: 'Intermediate (Higher Secondary Education)',
+      institution: 'Padmaja Higher Secondary School, Dewas',
+      duration: 'Jun 2021 - May 2022',
+    },
+    {
+      degree: 'Matriculation (Secondary Education)',
+      institution: 'The Guardian High School, Dewas',
+      duration: 'Jun 2019 - May 2020',
     },
   ],
   achievements: [
-    'Google Cloud Arcade Facilitator \'25',
-    'Solved 1100+ problems on LeetCode, demonstrating strong data structures and algorithms skills.',
-    'Achieved a global rank of 185 in LeetCode Weekly Contest 375.',
-    'Secured 1st place in the university-level "Code-a-thon" competition.',
+    'Google Cloud Arcade Facilitator Cohort 2 (2025) - Selected for facilitator program, mentoring peers in cloud-native application deployment.',
+    'ProjectExpo 4.0, MIT Ujjain (2025) - First Place Winner & Cash Prize for innovative project showcasing technical skills and problem-solving.',
+    'Codathon, MIT Ujjain – Recognized as Top Performer in competitive coding event demonstrating strong algorithmic thinking.',
   ],
   certifications: [
-    'Oracle Certified Associate, Java SE 8 Programmer',
-    'Spring Professional Certification',
-    'AWS Certified Solutions Architect – Associate',
+    'C++ & Java, Database & MySQL - AK Soft',
+    'Java, Spring 6 & Spring Boot 3 – Telusko (Udemy)',
+    'Java Developer Internship - Codsoft',
   ],
   contact: {
-    email: 'hiteshbaghel2003@gmail.com',
+    email: 'hiteshbaghel03@gmail.com',
     github: 'https://github.com/hiteshbaghel',
     linkedin: 'https://in.linkedin.com/in/hiteshbaghel',
     leetcode: 'https://leetcode.com/u/hiteshbaghel/',

@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
               cursorClassName="bg-slate-900 dark:bg-neutral-100"
             />
             <p className="text-lg text-slate-600 dark:text-neutral-400 font-light fade-in-up-2 max-w-2xl mx-auto lg:mx-0">
-              Crafting high-performance, scalable, and user-friendly backend applications using modern technologies, clean code, and best practices for seamless user experiences.
+              A Backend Engineer skilled in building scalable and efficient applications using Java, Spring Boot, and MySQL. Passionate about API development, database management, and system integration.
             </p>
             <div className="flex items-center justify-center lg:justify-start gap-3 pt-2 fade-in-up-3">
               <a href={`mailto:${portfolioData.contact.email}`} className="inline-flex items-center gap-2 bg-slate-900 text-white dark:bg-white dark:text-black font-semibold px-4 py-2 rounded-lg hover:bg-slate-700 dark:hover:bg-neutral-200 transition-colors">
